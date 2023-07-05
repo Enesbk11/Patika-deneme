@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+int IsPolindrom(char* str) {
+    int length = strlen(str);
+    int i, j;
+
+    for (i = 0, j = length - 1; i < j; i++, j--) {
+        if (str[i] != str[j]) {
+            return 0; // Polindrom değil
+        }
+    }
+
+    return 1; // Polindrom
+}
+
+int main() {
+    char str[100];
+
+    printf("Bir kelime girin: ");
+    scanf("%s", str);
+
+    if (IsPolindrom(str)) {
+        printf("%s bir polindromdur.\n", str);
+    } else {
+        printf("%s bir polindrom değildir.\n", str);
+    }
+
+    return 0;
+}
